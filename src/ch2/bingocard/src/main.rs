@@ -1,8 +1,8 @@
 use rand::seq::SliceRandom;
 
 fn main() {
-    let mut nums = [0; 75];
-    for i in 1..=75 { nums[i-1] = i}
+    let mut nums = vec![];
+    for i in 1..=75 { nums.push(i) }
 
     let mut rng = rand::thread_rng();
     nums.shuffle(&mut rng);
@@ -11,7 +11,7 @@ fn main() {
         for x in 0..5 {
             let i = y * 5 + x;
             if i == 12 {
-                print!(" *,")
+                print!("  *,")
             } else {
                 print!("{:3},", nums[i]);
             }
